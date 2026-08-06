@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+}
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -11,11 +18,12 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --heading: 'Inter Variable', system-ui, -apple-system, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
+  font-family: var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -32,7 +40,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
+    --text: #000000;
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;
@@ -50,62 +58,275 @@
   }
 }
 
-body {
-  margin: 0;
+@layer base {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+  }
+
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+
+  * html {
+    @apply font-sans;
+  }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
+
+:root {
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 215 20% 65%;
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+}
+
+
+
+
+/*Navbar*/
+/* From Uiverse.io by mrhyddenn */
+.navButton {
+  background: none;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
   text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
+.navButton:hover {
+  background: rgba(25, 24, 24, 0.3);
+  font-size: 1.1rem;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.navButton svg {
+  color: #fff;
+}
+
+
+/* From Uiverse.io by ke1221 */
+.loginButton {
+  color: #090909;
+  padding: 0.5em 0.75em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 0.08rem solid #e8e8e8;
+  transition: all 0.3s;
+  font-weight: 700;
+}
+
+.loginButton:hover {
+  color: #666;
+  box-shadow: inset 0.25rem 0.25rem 0.75rem #c5c5c5,
+    inset -0.25rem -0.25rem 0.75rem #ffffff;
+}
+
+.signupButton {
+  color: #e8e8e8;
+  padding: 0.5em 0.75em;
+  font-size: 1rem;
+  border-radius: 0.5em;
+  background: #090909;
+  cursor: pointer;
+  border: 0.08rem solid #3d3b3b;
+  transition: all 0.3s;
+  font-weight: 700;
+}
+
+.signupButton:hover {
+  color: #b8b7b7;
+  box-shadow: inset 0.25rem 0.25rem 0.75rem #525151,
+    inset -0.25rem -0.25rem 0.75rem #6e6d6d;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.getButton {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: royalblue;
+  z-index: 1;
+  font-family: inherit;
   font-weight: 500;
-  color: var(--text-h);
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.getButton span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid royalblue;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.getButton span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.getButton:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+}
+
+.getButton:hover {
+  color: white;
+}
+
+.getButton:active span::before {
+  background: #2751cd;
+}
+
+.glass-card {
+  width: 240px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.23);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 22px 11px rgba(255, 255, 255, 1.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+
+/*Chats*/
+
+.searchBar{
+  border:none;
+  border-radius: 1rem;
+  padding-left: 1rem;
+}
+.searchBar input:focus{
+  outline: none;
+  border: none;
+}
+.searchBar input::placeholder{
+  color: #709CE6;
+}
+
+
+.chat{
+  border-radius: 1rem;
+  
 }
