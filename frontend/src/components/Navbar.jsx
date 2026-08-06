@@ -9,13 +9,13 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between w-[30%]'>
                 <NavLink className={"navButton"} to="/">Home</NavLink>
-                <NavLink className={"navButton"} to="/home">Chats & Calls</NavLink>
-                <NavLink className={"navButton"} to="/home">Contact</NavLink>
-                <NavLink className={"navButton"} to="/home">About Us</NavLink>
+                <NavLink className={"navButton"} to="/chats">Chats & Calls</NavLink>
+                <NavLink className={"navButton"} to="/contact">Contact</NavLink>
+                <NavLink className={"navButton"} to="/about-us">About Us</NavLink>
             </div>
             <div className='flex justify-between w-[13%]'>
-                <NavLink className={"loginButton"} to="/home">Log In</NavLink>
-                <NavLink className={"signupButton"} to="/home">Sign Up</NavLink>
+                <NavLink className={"loginButton"} to="/login">Log In</NavLink>
+                <NavLink className={"signupButton"} to="/sign-up">Sign Up</NavLink>
             </div>
         </div>
     )

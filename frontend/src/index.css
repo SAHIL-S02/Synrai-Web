@@ -330,3 +330,13 @@
   border-radius: 1rem;
   
 }
+
+.chatList {
+    overflow-y: auto;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE & Edge */
+}
+
+.chatList::-webkit-scrollbar {
+    display: none;              /* Chrome, Safari, Edge */
+}
